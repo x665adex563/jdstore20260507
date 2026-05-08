@@ -7,12 +7,20 @@
         <%= link_to root_path, class: "text-xl font-semibold tracking-tight text-white" do %>
           JDStore
         <% end %>
+
+        <!-- Products -->
+        <%= link_to products_path,
+            class: "text-sm font-medium text-gray-300 transition hover:text-white" do %>
+          <i class="fa-solid fa-box mr-1"></i>
+          <%= t("navbar.products") %>
+        <% end %>
       </div>
+
 
       <!-- Right: Auth actions -->
       <div class="flex items-center">
         <%= render "shared/locale_switcher" %>
-        
+
         <% if user_signed_in? %>
           <%= render "shared/navbar_user" %>
         <% else %>
