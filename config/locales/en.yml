@@ -47,6 +47,8 @@ en:
 
   cart_items:
     add_to_cart: "Add to Cart"
+    flash:
+      added: "Added to cart."
 
   products:
     no_pic: "No Image"
