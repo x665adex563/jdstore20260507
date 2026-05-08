@@ -75,7 +75,7 @@ en:
 
     flash:
       not_admin: "You are not an admin."
-      
+
     layout:
       title: "Admin | JD Store"
       app_name: "JD Store Admin"
