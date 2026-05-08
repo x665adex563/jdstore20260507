@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|zh-TW/ do
     devise_for :users
-    root "welcome#index"
+    root "products#index"
     get "welcome/index"
 
     namespace :admin do
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
 
     resources :orders
-    resources :products
+    resources :products, only: [:index, :show]
     resources :carts
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
