@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  helper_method :current_cart
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
   # Changes to the importmap will invalidate the etag for HTML responses
@@ -15,6 +16,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_cart
+    @current_cart ||= find_cart
+  end
+
   private
 
   def set_locale
@@ -24,5 +29,14 @@ class ApplicationController < ActionController::Base
       else
         I18n.default_locale
       end
+  end
+
+  def find_cart
+    cart = Cart.find_by(id: session[:cart_id])
+    if cart.blank?
+      cart = Cart.create
+    end
+    session[:cart_id] = cart.id
+    return cart
   end
 end
