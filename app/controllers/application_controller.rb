@@ -9,6 +9,12 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }
   end
 
+  def admin_required
+    unless current_user.admin?
+      redirect_to "/", alert: t("admin.flash.not_admin")
+    end
+  end
+
   private
 
   def set_locale
