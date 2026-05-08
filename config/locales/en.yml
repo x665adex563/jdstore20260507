@@ -39,6 +39,11 @@ en:
 
   navbar:
     products: "Products"
+    orders: "Orders"
+    admin:
+      greeting: "%{email}"
+      products: "Admin Products"
+      sign_out: "Sign out"
 
   cart_items:
     add_to_cart: "Add to Cart"
@@ -48,7 +53,7 @@ en:
 
     show:
       quantity: "Stock"
-      
+
   activerecord:
     attributes:
       product:
