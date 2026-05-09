@@ -44,7 +44,16 @@ en:
       greeting: "%{email}"
       products: "Admin Products"
       sign_out: "Sign out"
+    cart: "Cart"
 
+    table:
+      product_info: "Product Info"
+      price: "Price"
+      quantity: "Quantity"
+
+    total: "Total"
+    checkout: "Checkout"
+    
   cart_items:
     add_to_cart: "Add to Cart"
     flash:
