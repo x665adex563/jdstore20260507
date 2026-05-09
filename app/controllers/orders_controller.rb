@@ -47,7 +47,7 @@ class OrdersController < ApplicationController
   def set_order
     @order = Order.find_by!(token: params[:token])
   end
-  
+
   def process_payment(method)
     if @order.is_paid?
       redirect_to order_path(@order), alert: t("orders.payment.already_paid")
@@ -60,4 +60,5 @@ class OrdersController < ApplicationController
     else
       redirect_to order_path(@order), alert: t("orders.payment.failed")
     end
+  end
 end
