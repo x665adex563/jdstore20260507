@@ -17,9 +17,14 @@ Rails.application.routes.draw do
       end
     end
     resources :cart_items, only: [:create, :update, :destroy]
-    resources :orders
+    resources :orders, param: :token do
+      member do
+        post :pay_with_creditcard
+        post :pay_with_ewallet
+      end
+    end
     namespace :account do
-      resources :orders
+      resources :orders, param: :token
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
