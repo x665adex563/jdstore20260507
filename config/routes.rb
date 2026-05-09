@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :carts do
       collection do
         delete :clear
+        get :checkout
       end
     end
     resources :cart_items, only: [:create, :update, :destroy]
