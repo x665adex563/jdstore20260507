@@ -58,13 +58,14 @@ en:
     add_to_cart: "Add to Cart"
     flash:
       added: "Added to cart."
+      out_of_stock: "Not enough stock to add this quantity to cart"
     confirm_remove: "Are you sure you want to delete this item?"
     destroyed_notice: "%{product} has been removed from your cart"
     updated_notice: "Quantity updated successfully"
 
   products:
     no_pic: "No Image"
-
+    sold_out: "Sold Out"
     show:
       quantity: "Stock"
 
