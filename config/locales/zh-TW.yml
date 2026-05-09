@@ -2,3 +2,6 @@ zh-TW:
   welcome:
     index:
       test: "zh-TW 測試"
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M"

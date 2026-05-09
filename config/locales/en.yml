@@ -37,6 +37,10 @@ en:
   currency:
     unit: "NT$"
 
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M"
+      
   navbar:
     products: "Products"
     orders: "Orders"
@@ -45,6 +49,7 @@ en:
       products: "Admin Products"
       sign_out: "Sign out"
     cart: "Cart"
+    my_orders: "My Orders"
 
     table:
       product_info: "Product Info"
@@ -106,7 +111,15 @@ en:
       table:
         product_info: "Product"
         price: "Price"
-        
+
+  account_orders:
+    index:
+      title: "My Orders"
+      empty: "You have not placed any orders yet."
+      table:
+        order_number: "Order #"
+        created_at: "Order Date"
+
   activerecord:
     attributes:
       product:
