@@ -16,6 +16,7 @@ Rails.application.routes.draw do
         delete :clear
       end
     end
+    resources :cart_items, only: [:create, :update, :destroy]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
