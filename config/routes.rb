@@ -11,7 +11,12 @@ Rails.application.routes.draw do
     resources :orders
     resources :products, only: [:index, :show]
     resources :cart_items, only: [:create]
-    resources :carts
+    resources :carts do
+      collection do
+        delete :clear
+      end
+    end
+    resources :cart_items, only: [:create, :update, :destroy]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

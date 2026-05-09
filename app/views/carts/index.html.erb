@@ -1,5 +1,17 @@
 <div class="container mx-auto px-4">
-  <h2 class="text-2xl font-bold mb-6"><%= t("carts.title") %></h2>
+  <div class="mb-6 flex items-center justify-between">
+    <h2 class="text-2xl font-bold">
+      <%= t("carts.title") %>
+    </h2>
+
+    <%= button_to clear_carts_path,
+        method: :delete,
+        data: { turbo_confirm: t("carts.confirm_clear") },
+        class: "inline-flex items-center rounded-lg border border-red-300 bg-white px-4 py-2 text-sm font-medium text-red-600 hover:bg-red-50 transition" do %>
+      <i class="fa-solid fa-trash mr-2"></i>
+      <%= t("carts.clear") %>
+    <% end %>
+  </div>
 
   <div class="overflow-x-auto">
     <table class="min-w-full border border-gray-200">
@@ -13,6 +25,9 @@
           </th>
           <th class="px-4 py-2 border-b border-gray-200 text-center">
             <%= t("carts.table.quantity") %>
+          </th>
+          <th class="px-4 py-2 border-b border-gray-200 text-center">
+            <%= t("carts.table.actions") %>
           </th>
         </tr>
       </thead>
@@ -40,7 +55,28 @@
             </td>
 
             <td class="px-4 py-2 border-b border-gray-200 text-center align-middle">
-              <%= cart_item.quantity %>
+              <%= form_with model: cart_item,
+                  url: cart_item_path(cart_item),
+                  method: :patch,
+                  local: true,
+                  class: "flex justify-center items-center" do |f| %>
+
+                <%= f.select :quantity,
+                    (1..cart_item.product.quantity),
+                    {},
+                    class: "border border-gray-300 rounded px-2 py-1 focus:ring-2 focus:ring-blue-400",
+                    onchange: "this.form.submit()",
+                    disabled: cart_item.product.quantity.zero? %>
+
+              <% end %>
+            </td>
+            <td class="px-4 py-2 border-b border-gray-200 text-center align-middle">
+              <%= button_to cart_item_path(cart_item),
+                  method: :delete,
+                  data: { turbo_confirm: t("cart_items.confirm_remove") },
+                  class: "inline-flex items-center justify-center text-red-500 hover:text-red-700 transition" do %>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
             </td>
           </tr>
         <% end %>
