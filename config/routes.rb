@@ -8,7 +8,6 @@ Rails.application.routes.draw do
       resources :products
     end
 
-    resources :orders
     resources :products, only: [:index, :show]
     resources :cart_items, only: [:create]
     resources :carts do
@@ -18,6 +17,7 @@ Rails.application.routes.draw do
       end
     end
     resources :cart_items, only: [:create, :update, :destroy]
+    resources :orders
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
