@@ -40,7 +40,7 @@ en:
   time:
     formats:
       long: "%Y-%m-%d %H:%M"
-      
+
   navbar:
     products: "Products"
     orders: "Orders"
@@ -107,11 +107,29 @@ en:
       total: "Total"
       billing_info: "Orderer"
       shipping_info: "Receiver"
-
       table:
         product_info: "Product"
         price: "Price"
+    payment:
+      title: "Payment"
+      status_label: "Payment Status"
 
+      unpaid: "Unpaid"
+      paid: "Paid"
+      paid_message: "This order has already been paid."
+
+      choose_method: "Choose a payment method"
+
+      creditcard: "Credit Card"
+      ewallet: "E-Wallet"
+
+      confirm_creditcard: "Pay with credit card?"
+      confirm_ewallet: "Pay with e-wallet?"
+
+      already_paid: "This order is already paid."
+      success: "Payment successful via %{method}"
+      failed: "Payment failed. Please try again later."
+      
   account_orders:
     index:
       title: "My Orders"
