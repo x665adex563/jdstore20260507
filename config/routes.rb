@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     end
     resources :cart_items, only: [:create, :update, :destroy]
     resources :orders
+    namespace :account do
+      resources :orders
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
