@@ -49,7 +49,10 @@
   </div>
 
   <div class="mt-6 flex justify-end text-lg font-semibold">
-    <%= t("carts.total") %> <span class="ml-2 text-red-600">xxx <%= t("currency.unit") %></span>
+    <span>
+      <%= t("carts.total") %>
+      <%= number_to_currency(render_cart_total_price(current_cart), unit: t("currency.unit"), precision: 0) %>
+    </span>
   </div>
 
   <hr class="my-6">
