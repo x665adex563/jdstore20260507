@@ -1,10 +1,12 @@
 class CartItemsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
-    current_cart.add_product(@product)
 
-    redirect_back fallback_location: root_path,
-                  notice: t("cart_items.flash.added")
+    if current_cart.add_product(@product)
+      redirect_back fallback_location: root_path, notice: t("cart_items.flash.added")
+    else
+      redirect_back fallback_location: root_path, alert: t("cart_items.flash.out_of_stock")
+    end
   end
 
   def destroy
@@ -18,11 +20,17 @@ class CartItemsController < ApplicationController
 
   def update
     @cart_item = current_cart.cart_items.find(params[:id])
-    if @cart_item.update(cart_item_params)
-      flash[:notice] = t("cart_items.updated_notice")
+
+    if @cart_item.product.quantity >= cart_item_params[:quantity].to_i
+      if @cart_item.update(cart_item_params)
+        flash[:notice] = t("cart_items.updated_notice")
+      else
+        flash[:alert] = @cart_item.errors.full_messages.join(", ")
+      end
     else
-      flash[:alert] = @cart_item.errors.full_messages.join(", ")
+      flash[:alert] = t("cart_items.flash.out_of_stock")
     end
+
     redirect_to carts_path
   end
 
