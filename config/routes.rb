@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       resources :products
-      resources :orders, params: :token
+      resources :orders, param: :token
     end
 
     resources :products, only: [:index, :show]
