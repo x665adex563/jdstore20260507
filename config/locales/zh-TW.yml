@@ -127,6 +127,8 @@ zh-TW:
       table:
         order_number: "訂單編號"
         created_at: "建立時間"
+        status: "狀態"
+        total: "總金額"
 
   order_mailer:
     notify_order_placed:

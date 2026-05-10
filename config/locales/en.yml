@@ -151,6 +151,8 @@ en:
       table:
         order_number: "Order #"
         created_at: "Order Date"
+        status: "Status"
+        total: "Total"
 
   order_mailer:
     notify_order_placed:
@@ -303,7 +305,7 @@ en:
       title: "Forgot your password?"
       subtitle: "Enter your email and we'll send you a reset link"
       send_reset: "Send reset instructions"
-      
+
   footer:
     brand: "JDStore"
     tech_stack: "Built with Ruby on Rails, Tailwind CSS, PostgreSQL, Active Storage, Amazon S3, SendGrid, and Render."
