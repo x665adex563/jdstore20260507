@@ -1,0 +1,12 @@
+<!-- Header -->
+<tr>
+  <td style="padding:32px;">
+    <h1><%= t("order_mailer.notify_order_placed.subject") %></h1>
+
+    <a href="<%= order_url(token: @order.to_param, locale: I18n.locale) %>">
+      <%= t("order_mailer.notify_order_placed.order_link") %>
+    </a>
+  </td>
+</tr>
+
+<%= render "order_details" %>
