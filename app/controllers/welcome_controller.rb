@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    flash[:notice] = "早安！你好！"
+    @products = Product.all.order(created_at: :desc).limit(4)
   end
 end

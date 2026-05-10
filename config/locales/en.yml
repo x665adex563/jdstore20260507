@@ -31,6 +31,12 @@ en:
   welcome:
     index:
       test: "en test"
+    hero:
+      badge: "Figure Game Store"
+      title: "Collect your favorite figures"
+      description: "Characters appear in the game, and interacting with the game can unlock virtual items."
+      cta: "Browse Products"
+
   common:
     submitting: "Submitting..."
 
@@ -176,7 +182,7 @@ en:
       title: "Your order has been canceled"
       description: "Your order has been successfully canceled. If you have any questions, please contact support."
       cta: "View Order"
-      
+
   activerecord:
     attributes:
       product:
@@ -281,3 +287,24 @@ en:
         ship: "Are you sure you want to mark this order as shipping?"
         mark_shipped: "Are you sure this order has been shipped?"
         return: "Are you sure you want to mark this order as returned?"
+
+  devise:
+    sessions:
+      title: "Sign in to JD Store"
+      subtitle: "Manage your orders and continue shopping"
+      sign_in: "Sign in"
+
+    registrations:
+      title: "Create your account"
+      subtitle: "Join JD Store and start shopping"
+      create_account: "Create account"
+
+    passwords:
+      title: "Forgot your password?"
+      subtitle: "Enter your email and we'll send you a reset link"
+      send_reset: "Send reset instructions"
+      
+  footer:
+    brand: "JDStore"
+    tech_stack: "Built with Ruby on Rails, Tailwind CSS, PostgreSQL, Active Storage, Amazon S3, SendGrid, and Render."
+    copyright: "Copyright © 2026 JDStore. All rights reserved."

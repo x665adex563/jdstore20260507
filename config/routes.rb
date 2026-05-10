@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|zh-TW/ do
     devise_for :users
-    root "products#index"
-    get "welcome/index"
+    root "welcome#index"
 
     namespace :admin do
       resources :products
