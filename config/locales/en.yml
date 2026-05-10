@@ -129,7 +129,7 @@ en:
       already_paid: "This order is already paid."
       success: "Payment successful via %{method}"
       failed: "Payment failed. Please try again later."
-      
+
   account_orders:
     index:
       title: "My Orders"
@@ -138,6 +138,19 @@ en:
         order_number: "Order #"
         created_at: "Order Date"
 
+  order_mailer:
+    notify_order_placed:
+      subject: "[JD Store] Order Confirmation"
+      heading: "Thank you for your order"
+      order_link: "View order"
+
+    shared:
+      order_details: "Order Details"
+      total: "Total"
+      shipping_info: "Shipping Information"
+      billing: "Billing"
+      shipping: "Shipping"
+      
   activerecord:
     attributes:
       product:
