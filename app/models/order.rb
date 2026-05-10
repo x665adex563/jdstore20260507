@@ -6,6 +6,8 @@ class Order < ApplicationRecord
   has_many :product_lists, dependent: :destroy
   has_secure_token  :token
 
+  after_commit :send_order_confirmation_email, on: :create
+
   def to_param
     token
   end
@@ -16,5 +18,11 @@ class Order < ApplicationRecord
 
   def pay!
     update!(is_paid: true)
+  end
+
+  private
+
+  def send_order_confirmation_email
+    OrderMailer.notify_order_placed(self).deliver_later
   end
 end
