@@ -1,7 +1,286 @@
 zh-TW:
   welcome:
     index:
-      test: "zh-TW 測試"
+      test: "中文測試"
+    hero:
+      badge: "模型遊戲商店"
+      title: "收藏你喜愛的模型角色"
+      description: "角色將會在遊戲中登場，並且透過與遊戲互動解鎖虛擬道具。"
+      cta: "瀏覽商品"
+
+  common:
+    submitting: "送出中..."
+
+  currency:
+    unit: "NT$"
+
   time:
     formats:
       long: "%Y-%m-%d %H:%M"
+
+  navbar:
+    products: "商品"
+    orders: "訂單"
+    admin:
+      greeting: "%{email}"
+      products: "後台商品"
+      sign_out: "登出"
+    cart: "購物車"
+    my_orders: "我的訂單"
+
+    table:
+      product_info: "商品資訊"
+      price: "價格"
+      quantity: "數量"
+
+    total: "總計"
+    checkout: "結帳"
+
+  cart_items:
+    add_to_cart: "加入購物車"
+    flash:
+      added: "已加入購物車"
+      out_of_stock: "庫存不足，無法加入此數量"
+    confirm_remove: "確定要刪除此商品嗎？"
+    destroyed_notice: "%{product} 已從購物車移除"
+    updated_notice: "商品數量更新成功"
+
+  products:
+    no_pic: "無圖片"
+    sold_out: "已售完"
+    show:
+      quantity: "庫存"
+
+  carts:
+    title: "購物車"
+    clear: "清空購物車"
+    confirm_clear: "確定要清空整個購物車嗎？"
+    cleared_notice: "購物車已清空"
+    checkout: "結帳"
+    cart_details: "購物車內容"
+    order_info: "訂單資訊"
+    orderer: "訂購人"
+    receiver: "收件人"
+    submit_order: "送出訂單"
+
+    table:
+      product_info: "商品資訊"
+      price: "價格"
+      quantity: "數量"
+      actions: "操作"
+
+    total: "總計"
+    checkout: "結帳"
+
+  orders:
+    form:
+      billing_name: "訂購人姓名"
+      billing_address: "訂購人地址"
+      shipping_name: "收件人姓名"
+      shipping_address: "收件地址"
+
+    show:
+      title: "訂單詳情"
+      shipping_title: "配送資訊"
+      total: "總計"
+      billing_info: "訂購人"
+      shipping_info: "收件人"
+
+      table:
+        product_info: "商品"
+        price: "價格"
+
+    payment:
+      title: "付款"
+      status_label: "付款狀態"
+
+      unpaid: "未付款"
+      paid: "已付款"
+      paid_message: "此訂單已完成付款。"
+
+      choose_method: "選擇付款方式"
+
+      creditcard: "信用卡"
+      ewallet: "電子錢包"
+
+      confirm_creditcard: "確定使用信用卡付款？"
+      confirm_ewallet: "確定使用電子錢包付款？"
+
+      success: "已使用 %{method} 付款成功"
+      not_allowed: "此訂單目前無法付款。"
+      cancel_requested_message: "此訂單正在審核取消申請，目前無法付款。"
+
+    actions:
+      cancel: "取消訂單"
+      confirm_cancel: "確定要取消此訂單嗎？"
+      cancel_requested: "已申請取消"
+
+    apply_to_cancel:
+      success: "已送出取消訂單申請。"
+      already_requested: "已提出取消申請"
+
+  account_orders:
+    index:
+      title: "我的訂單"
+      empty: "目前尚未建立任何訂單。"
+
+      table:
+        order_number: "訂單編號"
+        created_at: "建立時間"
+
+  order_mailer:
+    notify_order_placed:
+      subject: "[JD Store] 訂單確認通知"
+      heading: "感謝您的訂購"
+      order_link: "查看訂單"
+
+    shared:
+      order_details: "訂單內容"
+      total: "總計"
+      shipping_info: "配送資訊"
+      billing: "訂購人"
+      shipping: "收件人"
+
+    apply_cancel:
+      subject: "[JD Store] %{email} 提出取消申請 - %{token}"
+      title: "訂單取消申請"
+      description: "使用者提出了取消此訂單的申請。"
+      cta: "查看訂單"
+
+    notify_ship:
+      subject: "[JD Store] 您的訂單 %{token} 已出貨"
+      title: "您的訂單已出貨"
+      description: "您的商品已開始配送，請查看以下訂單資訊。"
+      cta: "查看訂單"
+
+    notify_cancel:
+      subject: "[JD Store] 您的訂單 %{token} 已取消"
+      title: "您的訂單已取消"
+      description: "您的訂單已成功取消，如有任何問題請聯絡客服。"
+      cta: "查看訂單"
+
+  activerecord:
+    attributes:
+      product:
+        title: "商品名稱"
+        description: "商品描述"
+        quantity: "庫存"
+        price: "價格"
+        image: "商品圖片"
+
+    errors:
+      models:
+        cart_item:
+          attributes:
+            quantity:
+              blank: "不能為空"
+              greater_than: "至少需要 1"
+              exceed_stock: "不可超過庫存數量"
+
+  admin:
+    products:
+      new:
+        page_title: "新增商品"
+        submit_label: "建立商品"
+
+      edit:
+        page_title: "編輯商品"
+        submit_label: "更新商品"
+
+      index:
+        title: "商品管理"
+        new: "新增商品"
+        product_pic: "商品圖片"
+        name: "商品名稱"
+        price: "價格"
+        options: "操作"
+        edit: "編輯"
+        delete: "刪除"
+
+      flash:
+        created: "商品建立成功。"
+        updated: "商品更新成功。"
+        deleted: "商品刪除成功。"
+
+      form:
+        no_image: "尚未選擇圖片"
+        image_hint: "支援格式：JPG、PNG、WEBP"
+        image_preview_alt: "商品圖片預覽"
+
+      confirm:
+        delete: "確定要刪除此商品嗎？"
+
+    flash:
+      not_admin: "您不是管理員。"
+
+    layout:
+      title: "後台 | JD Store"
+      app_name: "JD Store 後台"
+      header: "管理後台"
+      back_to_store: "← 返回商店"
+
+    navbar:
+      products: "商品"
+      orders: "訂單"
+
+    orders:
+      index:
+        title: "訂單管理"
+        created_at: "建立時間"
+        user: "使用者"
+        status: "狀態"
+        no_orders: "目前沒有訂單"
+
+      show:
+        title: "訂單詳情"
+        product_info: "商品"
+        price: "價格"
+        quantity: "數量"
+        total: "總計"
+        shipping_info: "配送資訊"
+        billing: "訂購人資訊"
+        shipping: "收件人"
+
+      states:
+        order_placed: "已建立"
+        paid: "已付款"
+        shipping: "配送中"
+        shipped: "已出貨"
+        order_cancelled: "已取消"
+        good_returned: "已退貨"
+        cancel_requested: "取消申請中"
+
+      actions:
+        cancel: "取消訂單"
+        approve_cancel: "同意取消"
+        ship: "開始配送"
+        mark_shipped: "標記為已出貨"
+        return: "退貨"
+
+      confirm:
+        cancel: "確定取消此訂單？"
+        approve_cancel: "確定同意此取消申請？"
+        ship: "確定將此訂單標記為配送中？"
+        mark_shipped: "確定此訂單已出貨？"
+        return: "確定將此訂單標記為已退貨？"
+
+  devise:
+    sessions:
+      title: "登入 JD Store"
+      subtitle: "管理您的訂單並繼續購物"
+      sign_in: "登入"
+
+    registrations:
+      title: "建立您的帳號"
+      subtitle: "加入 JD Store 開始購物"
+      create_account: "建立帳號"
+
+    passwords:
+      title: "忘記密碼？"
+      subtitle: "輸入您的 Email，我們將寄送重設密碼連結"
+      send_reset: "寄送重設密碼信"
+
+  footer:
+    brand: "JDStore"
+    tech_stack: "使用 Ruby on Rails、Tailwind CSS、PostgreSQL、Active Storage、Amazon S3、SendGrid 與 Render 建置。"
+    copyright: "Copyright © 2026 JDStore. All rights reserved."

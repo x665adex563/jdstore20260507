@@ -29,8 +29,10 @@
           <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">
             <%= t("admin.products.index.price") %>
           </th>
-          <th class="w-[120px] px-6 py-3 text-center text-xs font-semibold uppercase tracking-wider text-gray-500">
-            <%= t("admin.products.index.options") %>
+          <th class="w-[260px] px-6 py-3 text-xs font-semibold tracking-wider text-gray-500">
+            <div class="flex justify-center">
+              <%= t("admin.products.index.options") %>
+            </div>
           </th>
         </tr>
       </thead>
@@ -59,10 +61,10 @@
               <%= number_to_currency(product.price, unit: t("currency.unit"), precision: 0) %>
             </td>
 
-            <td class="px-6 py-4 text-sm">
-              <div class="flex items-center gap-2">
+            <td class="w-[260px] whitespace-nowrap px-6 py-4 text-sm">
+              <div class="flex items-center justify-center gap-2 whitespace-nowrap">
                 <%= link_to edit_admin_product_path(product),
-                    class: "inline-flex items-center rounded-md border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100" do %>
+                    class: "inline-flex items-center whitespace-nowrap rounded-md border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100" do %>
                   <i class="fa-regular fa-pen-to-square mr-2"></i>
                   <%= t("admin.products.index.edit") %>
                 <% end %>
@@ -72,7 +74,7 @@
                       turbo_method: :delete,
                       turbo_confirm: t("admin.products.confirm.delete")
                     },
-                    class: "inline-flex items-center rounded-md border border-red-300 px-3 py-1.5 text-sm font-medium text-red-600 transition hover:bg-red-50" do %>
+                    class: "inline-flex items-center whitespace-nowrap rounded-md border border-red-300 px-3 py-1.5 text-sm font-medium text-red-600 transition hover:bg-red-50" do %>
                   <i class="fa-regular fa-trash-can mr-2"></i>
                   <%= t("admin.products.index.delete") %>
                 <% end %>
