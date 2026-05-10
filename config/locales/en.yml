@@ -126,9 +126,8 @@ en:
       confirm_creditcard: "Pay with credit card?"
       confirm_ewallet: "Pay with e-wallet?"
 
-      already_paid: "This order is already paid."
       success: "Payment successful via %{method}"
-      failed: "Payment failed. Please try again later."
+      not_allowed: "This order cannot be paid."
 
   account_orders:
     index:
@@ -150,7 +149,7 @@ en:
       shipping_info: "Shipping Information"
       billing: "Billing"
       shipping: "Shipping"
-      
+
   activerecord:
     attributes:
       product:
