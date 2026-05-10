@@ -128,6 +128,15 @@ en:
 
       success: "Payment successful via %{method}"
       not_allowed: "This order cannot be paid."
+      cancel_requested_message: "Your cancellation request is being reviewed. Payment is currently unavailable."
+    actions:
+      cancel: "Cancel Order"
+      confirm_cancel: "Are you sure you want to cancel this order?"
+      cancel_requested: "Cancel Requested"
+
+    apply_to_cancel:
+      success: "Your cancellation request has been submitted."
+      already_requested: "Cancel request already submitted"
 
   account_orders:
     index:
@@ -150,6 +159,12 @@ en:
       billing: "Billing"
       shipping: "Shipping"
 
+    apply_cancel:
+      subject: "[JD Store] Cancellation request from %{email} - %{token}"
+      title: "Order Cancellation Request"
+      description: "The customer has requested to cancel this order."
+      cta: "View Order"
+      
   activerecord:
     attributes:
       product:
