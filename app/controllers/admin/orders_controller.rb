@@ -3,7 +3,7 @@ class Admin::OrdersController < ApplicationController
 
   before_action :authenticate_user!
   before_action :admin_required
-  before_action :find_order, only: [:show]
+  before_action :find_order, only: [:show, :cancel, :ship, :shipped, :return]
 
   def index
     @orders = Order.order(id: :desc)
@@ -11,6 +11,26 @@ class Admin::OrdersController < ApplicationController
 
   def show
     @product_lists = @order.product_lists
+  end
+
+  def ship
+    @order.ship!
+    redirect_back(fallback_location: admin_orders_path)
+  end
+
+  def shipped
+    @order.deliver!
+    redirect_back(fallback_location: admin_orders_path)
+  end
+
+  def cancel
+    @order.cancel_order!
+    redirect_back(fallback_location: admin_orders_path)
+  end
+
+  def return
+    @order.return_good!
+    redirect_back(fallback_location: admin_orders_path)
   end
 
   private

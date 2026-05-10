@@ -6,7 +6,14 @@ Rails.application.routes.draw do
 
     namespace :admin do
       resources :products
-      resources :orders, param: :token
+      resources :orders, param: :token do
+        member do
+          post :cancel
+          post :ship
+          post :shipped
+          post :return
+        end
+      end
     end
 
     resources :products, only: [:index, :show]
