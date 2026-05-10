@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content=<%= t("admin.layout.app_name") %>
+    <meta name="application-name" content="<%= t("admin.layout.app_name") %>">
     <meta name="mobile-web-app-capable" content="yes">
 
     <%= csrf_meta_tags %>
@@ -50,7 +50,7 @@
               <span><%= t("admin.navbar.products") %></span>
             <% end %>
 
-            <%= link_to "#",
+            <%= link_to admin_orders_path,
                 class: "flex items-center gap-2 rounded px-3 py-2 text-sm hover:bg-gray-100" do %>
               <i class="fa-solid fa-receipt"></i>
               <span><%= t("admin.navbar.orders") %></span>

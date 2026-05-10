@@ -213,3 +213,30 @@ en:
     navbar:
       products: "Products"
       orders: "Orders"
+
+    orders:
+      index:
+        title: "Orders"
+        created_at: "Order Date"
+        user: "User"
+        status: "Status"
+        no_orders: "No orders found"
+
+      show:
+        title: "Order Details"
+        product_info: "Product"
+        price: "Price"
+        quantity: "Quantity"
+        total: "Total"
+        shipping_info: "Shipping Information"
+        billing: "Billing"
+        shipping: "Shipping"
+
+      states:
+        order_placed: "Order Placed"
+        paid: "Paid"
+        shipping: "Shipping"
+        shipped: "Shipped"
+        order_cancelled: "Cancelled"
+        good_returned: "Returned"
+        cancel_requested: "Cancel Requested"
