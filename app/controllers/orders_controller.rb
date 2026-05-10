@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
-  before_action :set_order, only: [:pay_with_creditcard, :pay_with_ewallet]
+  before_action :set_order, only: [:pay_with_creditcard, :pay_with_ewallet, :apply_to_cancel]
 
   def create
     @order = Order.new(order_params)
@@ -36,6 +36,19 @@ class OrdersController < ApplicationController
 
   def pay_with_ewallet
     process_payment("ewallet")
+  end
+
+  def apply_to_cancel
+    if @order.may_request_cancel?
+      @order.request_cancel!
+      OrderMailer.apply_cancel(@order).deliver_later
+
+      redirect_to order_path(@order),
+      notice: t("orders.apply_to_cancel.success")
+    else
+      redirect_to order_path(@order),
+      alert: t("orders.apply_to_cancel.already_requested")
+    end
   end
 
   private

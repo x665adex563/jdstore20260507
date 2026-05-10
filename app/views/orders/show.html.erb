@@ -2,10 +2,23 @@
   <div class="mx-auto max-w-4xl space-y-8">
 
     <section class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-      <div class="border-b border-gray-200 px-6 py-4">
+      <div class="border-b border-gray-200 px-6 py-4 flex justify-between items-center">
+
         <h2 class="text-2xl font-bold text-gray-900">
           <%= t("orders.show.title") %>
         </h2>
+
+        <% if @order.may_request_cancel? %>
+          <%= button_to t("orders.actions.cancel"),
+              apply_to_cancel_order_path(@order),
+              method: :post,
+              data: { turbo_confirm: t("orders.actions.confirm_cancel") },
+              class: "bg-red-100 text-red-600 hover:bg-red-200 font-medium py-2 px-4 rounded-lg text-sm" %>
+        <% elsif @order.cancel_requested? %>
+          <span class="text-sm text-gray-500">
+            <%= t("orders.actions.cancel_requested") %>
+          </span>
+        <% end %>
       </div>
 
       <div class="overflow-x-auto">
