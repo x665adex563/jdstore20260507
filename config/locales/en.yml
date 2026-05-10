@@ -228,15 +228,29 @@ en:
         price: "Price"
         quantity: "Quantity"
         total: "Total"
-        shipping_info: "Shipping Information"
-        billing: "Billing"
-        shipping: "Shipping"
+        shipping_info: "Shipping Info"
+        billing: "Billing Info"
+        shipping: "Recipient"
 
       states:
         order_placed: "Order Placed"
         paid: "Paid"
         shipping: "Shipping"
         shipped: "Shipped"
-        order_cancelled: "Cancelled"
+        order_cancelled: "Order Cancelled"
         good_returned: "Returned"
         cancel_requested: "Cancel Requested"
+
+      actions:
+        cancel: "Cancel Order"
+        approve_cancel: "Approve Cancel"
+        ship: "Ship"
+        mark_shipped: "Mark as Shipped"
+        return: "Return"
+
+      confirm:
+        cancel: "Cancel this order?"
+        approve_cancel: "Approve this cancellation request?"
+        ship: "Are you sure you want to mark this order as shipping?"
+        mark_shipped: "Are you sure this order has been shipped?"
+        return: "Are you sure you want to mark this order as returned?"
