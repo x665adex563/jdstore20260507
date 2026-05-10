@@ -112,27 +112,30 @@
             <%= @order.is_paid? ? t("orders.payment.paid") : t("orders.payment.unpaid") %>
           </span>
         </div>
-        <% unless @order.is_paid? %>
-        <div class="flex items-center justify-between mt-4">
-          <!-- 左邊 -->
-          <p class="text-sm text-gray-600">
-            <%= t("orders.payment.choose_method") %>
-          </p>
 
-          <!-- 右邊 -->
-          <div class="flex space-x-4">
-            <%= button_to t("orders.payment.creditcard"),
-                pay_with_creditcard_order_path(@order),
-                data: { turbo_confirm: t("orders.payment.confirm_creditcard") },
-                class: "bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200" %>
+        <% if @order.may_make_payment? %>
+          <div class="flex items-center justify-between mt-4">
+            <p class="text-sm text-gray-600">
+              <%= t("orders.payment.choose_method") %>
+            </p>
 
-            <%= button_to t("orders.payment.ewallet"),
-                pay_with_ewallet_order_path(@order),
-                data: { turbo_confirm: t("orders.payment.confirm_ewallet") },
-                class: "bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200" %>
+            <div class="flex space-x-4">
+              <%= button_to t("orders.payment.creditcard"),
+                  pay_with_creditcard_order_path(@order),
+                  data: { turbo_confirm: t("orders.payment.confirm_creditcard") },
+                  class: "bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200" %>
+
+              <%= button_to t("orders.payment.ewallet"),
+                  pay_with_ewallet_order_path(@order),
+                  data: { turbo_confirm: t("orders.payment.confirm_ewallet") },
+                  class: "bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200" %>
+            </div>
           </div>
-        </div>
-        <% else %>
+        <% elsif @order.cancel_requested? %>
+          <p class="text-sm text-gray-600">
+            <%= t("orders.payment.cancel_requested_message") %>
+          </p>
+        <% elsif @order.paid? %>
           <p class="text-sm text-gray-600">
             <%= t("orders.payment.paid_message") %>
           </p>
