@@ -164,6 +164,18 @@ en:
       title: "Order Cancellation Request"
       description: "The customer has requested to cancel this order."
       cta: "View Order"
+
+    notify_ship:
+      subject: "[JD Store] Your order %{token} has been shipped"
+      title: "Your order has been shipped"
+      description: "Your order is on the way. Please check the details below."
+      cta: "View Order"
+
+    notify_cancel:
+      subject: "[JD Store] Your order %{token} has been canceled"
+      title: "Your order has been canceled"
+      description: "Your order has been successfully canceled. If you have any questions, please contact support."
+      cta: "View Order"
       
   activerecord:
     attributes:
