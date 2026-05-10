@@ -1,0 +1,33 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+  <div class="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
+    <h2 class="text-center text-2xl font-bold text-gray-900">
+      <%= t("devise.passwords.title") %>
+    </h2>
+
+    <p class="mt-2 text-center text-sm text-gray-500">
+      <%= t("devise.passwords.subtitle") %>
+    </p>
+
+    <%= form_for(resource, as: resource_name,
+          url: password_path(resource_name),
+          html: { method: :post, class: "mt-8 space-y-5" }) do |f| %>
+
+      <div>
+        <%= f.label :email,
+              class: "block text-sm font-medium text-gray-700" %>
+
+        <%= f.email_field :email,
+              autofocus: true,
+              autocomplete: "email",
+              class: "mt-1 w-full rounded-lg border border-gray-300 px-4 py-2" %>
+      </div>
+
+      <%= f.submit t("devise.passwords.send_reset"),
+            class: "w-full rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700" %>
+    <% end %>
+
+    <div class="mt-6 text-center text-sm text-gray-500">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
