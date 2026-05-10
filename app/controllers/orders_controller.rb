@@ -49,16 +49,14 @@ class OrdersController < ApplicationController
   end
 
   def process_payment(method)
-    if @order.is_paid?
-      redirect_to order_path(@order), alert: t("orders.payment.already_paid")
+    unless @order.may_make_payment?
+      redirect_to order_path(@order), alert: t("orders.payment.not_allowed")
       return
     end
 
     @order.set_payment_with!(method)
-    if @order.pay!
-      redirect_to order_path(@order), notice: t("orders.payment.success", method: t("orders.payment.#{method}"))
-    else
-      redirect_to order_path(@order), alert: t("orders.payment.failed")
-    end
+    @order.make_payment!
+
+    redirect_to order_path(@order), notice: t("orders.payment.success", method: t("orders.payment.#{method}"))
   end
 end
