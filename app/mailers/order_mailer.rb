@@ -1,4 +1,6 @@
 class OrderMailer < ApplicationMailer
+  default from: "JD Store <#{ENV['DEFAULT_FROM_EMAIL']}>"
+
   def notify_order_placed(order)
     @order = order
     @user = order.user
@@ -13,7 +15,7 @@ class OrderMailer < ApplicationMailer
     @product_lists = @order.product_lists
 
     mail(
-      to: "admin@test.com",
+      to: ENV.fetch("ADMIN_EMAIL", "x665adex563@gmail.com"),
       subject: t("order_mailer.apply_cancel.subject",
                         email: order.user.email,
                         token: order.token)
