@@ -19,11 +19,13 @@ export default class extends Controller {
 
   open() {
     this.menuTarget.classList.remove("hidden")
+    this.iconTarget.classList.add("rotate-180")
     this.opened = true
   }
 
   close() {
     this.menuTarget.classList.add("hidden")
+    this.iconTarget.classList.remove("rotate-180")
     this.opened = false
   }
 
