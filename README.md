@@ -89,15 +89,20 @@ Password: 123456
 ## Screenshots
 
 * Homepage
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f53967c2-58eb-4d85-8357-58114dbbc10d" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/719abeca-1ae8-41f8-adc0-82c76b966660" />
 
 * Product page
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4e2b4b7f-2f86-4dd0-b2c2-391acb2b3e55" />
 
 * Cart page
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a19df5f2-623a-4162-b24f-50d6f51e8853" />
 
 * Checkout page
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a8a609e4-a54b-439a-9831-dcffeccc7fdc" />
 
 * Admin dashboard
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ce3fcbda-0036-4008-bfc7-60205e62e3fa" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4dc42c1b-4abf-432e-9dd7-391a0e016072" />
 
 ---
 
