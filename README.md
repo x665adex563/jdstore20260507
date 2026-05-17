@@ -5,10 +5,19 @@ A full-stack Ruby on Rails e-commerce platform built for portfolio demonstration
 ---
 
 ## Live Demo
+
 https://www.jdstoreapp.com/
 
+---
+
 ## Demo Video
+
+This demo follows a full user flow from browsing products to order creation, followed by admin management and order status transitions.
+
+
 https://www.youtube.com/watch?v=wQBasrAbekg
+
+---
 
 ### Test Accounts
 
@@ -103,8 +112,10 @@ Password: 123456
 * Checkout page
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a8a609e4-a54b-439a-9831-dcffeccc7fdc" />
 
-* Admin dashboard
+* Admin dashboard (product management)
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ce3fcbda-0036-4008-bfc7-60205e62e3fa" />
+
+* Admin dashboard (order management)
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4dc42c1b-4abf-432e-9dd7-391a0e016072" />
 
 ---
