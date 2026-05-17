@@ -8,7 +8,7 @@ A full-stack Ruby on Rails e-commerce platform built for portfolio demonstration
 https://www.jdstoreapp.com/
 
 ## Demo Video
-https://www.youtube.com/watch?v=7NHrZ8rwDmM
+https://www.youtube.com/watch?v=wQBasrAbekg
 
 ### Test Accounts
 
