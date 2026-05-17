@@ -14,7 +14,6 @@ https://www.jdstoreapp.com/
 
 This demo follows a full user flow from browsing products to order creation, followed by admin management and order status transitions.
 
-
 https://www.youtube.com/watch?v=wQBasrAbekg
 
 ---
